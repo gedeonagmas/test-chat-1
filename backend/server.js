@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
   res.send("well come to my chat app");
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+// });
 
 server.listen(PORT, () => {
   connectToMongoDB();
