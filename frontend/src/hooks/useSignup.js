@@ -24,18 +24,21 @@ const useSignup = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          fullName,
-          username,
-          password,
-          confirmPassword,
-          gender,
-        }),
-      });
+      const res = await fetch(
+        "https://test-chat-1-server.vercel.app/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            fullName,
+            username,
+            password,
+            confirmPassword,
+            gender,
+          }),
+        }
+      );
 
       const data = await res.json();
       if (data.error) {

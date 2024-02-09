@@ -11,7 +11,7 @@ const useGetMessages = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://localhost:5000/api/messages/${selectedConversation._id}`,
+          `https://test-chat-1-server.vercel.app/api/messages/${selectedConversation._id}`,
           { credentials: "include" }
         );
         const data = await res.json();
