@@ -18,7 +18,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: ["https://test-chat-1-client.vercel.app"],
+    origin: ["https://test-chat-1-clients.vercel.app"],
     methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
