@@ -15,7 +15,7 @@ const PORT = 5000;
 // const __dirname = path.resolve();
 
 dotenv.config();
-
+app.use(cors());
 // app.use(
 //   cors({
 //     origin: ["https://test-chat-1-client.vercel.app"],
