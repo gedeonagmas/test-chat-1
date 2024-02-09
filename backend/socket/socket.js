@@ -5,16 +5,19 @@ import express from "express";
 const app = express();
 
 const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    // origin: ["https://test-chat-1-client.vercel.app"],
-    origin: "*",
-    methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
-    credentials: true,
-  },
-});
+const io = new Server(
+  server
+  // {
+  // cors: {
+  //   // origin: ["https://test-chat-1-client.vercel.app"],
+  //   origin: "*",
+  //   methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
+  //   credentials: true,
+  // },
+  // }
+);
 
-// io.origins('*:*');
+io.origins("*:*");
 export const getReceiverSocketId = (receiverId) => {
   return userSocketMap[receiverId];
 };
