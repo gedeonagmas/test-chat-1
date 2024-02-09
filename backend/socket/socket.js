@@ -4,13 +4,21 @@ import express from "express";
 
 const app = express();
 
+// , {
+//   cors: {
+//     origin: true,
+//     methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
+//     credentials: true,
+//   },
+// }
 const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: true,
-    methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
-    credentials: true,
-  },
+const io = new Server(server);
+
+io.origins((origin, callback) => {
+  if (origin !== "https://test-chat-1-client.vercel.app") {
+    return callback("origin not allowed", false);
+  }
+  callback(null, true);
 });
 
 export const getReceiverSocketId = (receiverId) => {
