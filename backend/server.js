@@ -26,15 +26,15 @@ app.use(
 app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("well come to my chat app");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // app.use(express.static(path.join(__dirname, "/frontend/dist")));
-
-app.get("/", (req, res) => {
-  res.send("well come to my chat app");
-});
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
