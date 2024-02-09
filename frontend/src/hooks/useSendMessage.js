@@ -13,6 +13,7 @@ const useSendMessage = () => {
         `http://localhost:5000/api/messages/send/${selectedConversation._id}`,
         {
           method: "POST",
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
